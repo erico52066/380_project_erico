@@ -20,6 +20,15 @@ CREATE TABLE courses (
     PRIMARY KEY (courseId)
 );
 
+CREATE TABLE poll_comment (
+    id INTERGER PRIMARY KEY,
+    poll_id INTEGER,
+    username VARCHAR(50),
+    content VARCHAR(255),
+    posted_at DATE,
+    FOREIGN KEY(poll_id) REFERENCES polls(poll_id)
+)
+
 INSERT INTO users VALUES ('ken', 'pw', 'ken@gmail.com');
 INSERT INTO user_roles(username, role) VALUES ('ken', 'ROLE_STUDENT');
 
